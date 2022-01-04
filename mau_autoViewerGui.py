@@ -19,7 +19,7 @@ def autoViewerGui():
                 k.setValue(0)
                 k.clearAnimated()
             else:
-                i.knob("which").setExpression("$gui")
+                i.knob("which").setExpression('[python {1-nuke.executing()}]')
         #IF IS A VIEWER JUST PASS        
         elif i.Class() == "Viewer":
             pass
@@ -30,4 +30,4 @@ def autoViewerGui():
                 i.knob("disable").clearAnimated()
                 i.knob("disable").setValue(False)
             else:
-                i.knob("disable").setExpression("$gui")
+                i.knob("disable").setExpression('[python {1-nuke.executing()}]')
